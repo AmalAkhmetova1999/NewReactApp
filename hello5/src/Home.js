@@ -7,7 +7,7 @@ const Home = () => {
   const ThirdPrice = localStorage.getItem('PriceThree')|| ('100:-');
   const FourthPrice = localStorage.getItem('PriceFour')|| ('100:-');
   const FifthPrice = localStorage.getItem('PriceFive')|| ('100:-');
-  return <div>
+  return <div className="ok">
   <ul>
     <li>
     <p>KEBABPIZZA {FirstPrice} </p>

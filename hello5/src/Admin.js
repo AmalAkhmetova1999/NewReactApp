@@ -4,17 +4,17 @@ import SecondPizza from "./SecondPizza";
 import ThirdPizza from "./ThirdPizza";
 import FourthPizza from "./FourthPizza";
 import FifthPizza from "./FifthPizza";
-
+import "./main.css"
 function Admin() {
-  const [priceOne, setPriceOne] = useState("100:-");
+  const [priceOne, setPriceOne] = useState(localStorage.getItem("PriceOne")|| "100:-");
   const [showFirst, setShowFirst] = useState(false);
-  const [priceTwo, setPriceTwo] = useState("100:-");
+  const [priceTwo, setPriceTwo] =  useState(localStorage.getItem("PriceTwo")|| "100:-");
   const [showSecond, setShowSecond] = useState(false);
-  const [priceThree, setPriceThree] = useState("100:-");
+  const [priceThree, setPriceThree] =  useState(localStorage.getItem("PriceThree")|| "100:-");
   const [showThird, setShowThird] = useState(false);
-  const [priceFour, setPriceFour] = useState("100:-");
+  const [priceFour, setPriceFour] =  useState(localStorage.getItem("PriceFour")|| "100:-");
   const [showFourth, setShowFourth] = useState(false);
-  const [priceFive, setPriceFive] = useState("100:-");
+  const [priceFive, setPriceFive] =  useState(localStorage.getItem("PriceFive")|| "100:-");
   const [showFifth, setShowFifth] = useState(false);
    
   const p = () => localStorage.setItem("PriceOne", priceOne);
@@ -23,7 +23,7 @@ function Admin() {
   localStorage.setItem("PriceFour", priceFour);
   localStorage.setItem("PriceFive", priceFive);
   return (
-    <div>
+    <div className="ok">
       <div>
         <ul>
         <li>

@@ -120,6 +120,7 @@ body {
   }
   
   .topnav {
+    margin-bottom:1%;
     display: flex;
     z-index: 5;
   }
@@ -134,15 +135,21 @@ body {
   }
   
   .topnav-right {
-    display: flex;
-    margin-left: auto;
-    z-index: 5;
+  position:absolute;
+  right:2%
   }
+  .topnav-left {
+    position:absolute;
+    left:2%;
+    display:flex
+    }
+    
   
   .topnav a:hover {
     color: #a0a0a0;
   }
   
+  .ok{margin-top: 10%;}
   .inv {
     display: none;
   }
@@ -333,4 +340,5 @@ body {
     margin-top: -15%;
     z-index: 5;
   }
-  
+  .m{font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 10pt;}

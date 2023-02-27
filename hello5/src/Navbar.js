@@ -1,8 +1,8 @@
 import {React,useContext} from "react";
 import AppBar from "@mui/material/AppBar"
 import Toolbar from "@mui/material/Toolbar"
-import { Button, Grid } from "@mui/material";
-import { BrowserRouter, NavLink} from "react-router-dom";
+import { } from "@mui/material";
+import { NavLink} from "react-router-dom";
 import { Context } from './index';
 import {useAuthState} from "react-firebase-hooks/auth";
 import basket from "./basket";
@@ -19,7 +19,8 @@ const Navbar= () => {
           menu: "MENU",
           contact: "OPENING HOURS & CONTACT",
           admin: "LOGIN AS ADMINISTRATOR",
-          logout: "LOG OUT"
+          logout: "LOG OUT",
+          google: "SIGN IN WITH GOOGLE"
     
         },
         se: {
@@ -27,14 +28,16 @@ const Navbar= () => {
           menu: "MENY",
           contact: "ÖPPETTIDER & KONTAKT",
           admin: "LOGGA IN SOM ADMINISTRATÖR",
-          logout: "LOGGA UT"
+          logout: "LOGGA UT",
+          google: "SIGN IN WITH GOOGLE SWEDEN"
         },
         ru: {
           home: "Главная",
           menu: "МЕНЮ",
           contact: "ВРЕМЯ РАБОТЫ И КОНТАКТЫ",
           admin: "ВОЙТИ КАК АДМИНИСТРАТОР",
-          logout: "ВЫЙТИ"
+          logout: "ВЫЙТИ",
+          google: "ВОЙТИ С ПОМОЩЬЮ GOOGLE"
         }
       };
     
@@ -44,20 +47,14 @@ const Navbar= () => {
     const {auth}=useContext(Context)
     const [user]=useAuthState(auth)
 
-
-    
-  return <AppBar style={{background:"none"}} position="static">
+  return <AppBar style={{background:"none"}}>
   <Toolbar variant={"dense"}>
-   <Grid container justifyContent={"flex-end"}>
-   
-    {user ? 
-    <BrowserRouter>
+    {user ?
       <div>
         <div className="topnav">
           <nav className="navbar" onClick={(e) => e.stopPropagation()}>
-            <li className="topnav-right">
+            <li className="topnav-left">
               <a style={{fontSize:'14pt'}} href="index.html">{languages[language].home}</a>
-
               <div className="dropdown">
                 <button onClick={myFunction} id="language" className="dropbtn">
                   <img
@@ -77,7 +74,6 @@ const Navbar= () => {
                 </div>
               </div>
             </li>
-
             <div className="topnav-right">
               <div className="right">
               <a href="index.html" className="m">
@@ -86,7 +82,8 @@ const Navbar= () => {
               <a href="index.html" className="m">
                 {languages[language].menu}
               </a>
-              <NavLink to="/" element={<Home/>} style={{textDecoration:"none"}}><Button onClick={()=> auth.signOut()} style={{color:"#777",borderColor: "#777"}} variant={"outlined"}>{languages[language].logout}</Button>
+              <NavLink to="/" element={<Home/>} >
+                <button className="m" style={{color:"#777"}}onClick={()=> auth.signOut()} >{languages[language].logout}</button>
     </NavLink>
               </div>
             </div>
@@ -100,19 +97,13 @@ const Navbar= () => {
             </button>
           </nav>
         </div>
-      </div>
-      
-    </BrowserRouter>
-    
+      </div>    
     :
-    <BrowserRouter>
-   
     <div>
         <div className="topnav">
           <nav className="navbar" onClick={(e) => e.stopPropagation()}>
-            <li className="topnav-right">
+            <li className="topnav-left">
               <a style={{fontSize:'14pt'}} href="index.html">{languages[language].home}</a>
-
               <div className="dropdown">
                 <button onClick={myFunction} id="language" className="dropbtn">
                   <img
@@ -132,7 +123,6 @@ const Navbar= () => {
                 </div>
               </div>
             </li>
-
             <div className="topnav-right">
               <div className="right">
               <a href="index.html" className="m">
@@ -159,12 +149,7 @@ const Navbar= () => {
           </nav>
         </div>
       </div>
-     
-    </BrowserRouter>
- 
     }
-  
-   </Grid>
   </Toolbar>
 </AppBar>
 };

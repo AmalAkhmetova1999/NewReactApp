@@ -5,6 +5,7 @@ import { createRoot } from "react-dom/client";
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
+import { BrowserRouter } from 'react-router-dom';
 
 const firebaseConfig = {
   apiKey: "AIzaSyChBp8o2vHpeJhAC4WMiAo7Rahkd3jbrpY",
@@ -26,13 +27,15 @@ const rootElement = document.getElementById("root");
 const root = createRoot(rootElement);
 
 root.render(
+  <BrowserRouter>
   <Context.Provider value={{
     firebase,
     auth,
     firestore
 }}>
     <App />
-</Context.Provider>,
+</Context.Provider>
+</BrowserRouter>
 );
 
 
