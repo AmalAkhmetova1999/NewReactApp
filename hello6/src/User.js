@@ -1,10 +1,12 @@
-import React from "react"
+import React from "react";
+
 
 const User =()=>
 {
+ 
 return(
     <div className="home">
-        Hello. This is USER page. Login or sleep
+       Hello, {localStorage.getItem('email')}
     </div>
 )
 }

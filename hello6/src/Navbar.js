@@ -12,14 +12,17 @@ const Navbar= () => {
     
     const {auth}=useContext(Context)
     const [user]=useAuthState(auth)
+    const signOut=()=>{
+      auth.signOut()
+       }
 
-  return <AppBar style={{backgroundColor:"#ffc107"}} position="static">
+  return <AppBar style={{backgroundColor:"pink"}} position="static">
   <Toolbar variant={"dense"}>
    <Grid container justifyContent={"flex-end"}>
    
     {user ? 
     <NavLink to="/" element={<Home/>} style={{textDecoration:"none"}}>
-    <Button onClick={()=> auth.signOut()} style={{color:"black",borderColor: "black"}} variant={"outlined"}>Log Out</Button>
+    <Button onClick={signOut} style={{color:"black",borderColor: "black"}} variant={"outlined"}>Log Out</Button>
     </NavLink>
     :
     <NavLink style={{textDecoration:"none"}} to={LOGIN_ROUTE}>
