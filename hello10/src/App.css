@@ -167,8 +167,8 @@ z-index: 100;}
 .zoom {
   display: inline-block; 
   overflow: hidden; 
-  background: rgba(76, 175, 80);
-  opacity: 0.4;
+  background: #1ec653;
+  opacity: .5;
   position:relative;
   z-index: 1;
 }
