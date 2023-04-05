@@ -1,0 +1,256 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+@font-face
+  {
+    font-family: 'Huntington';
+    src: url(huntingtonboldregular.ttf); 
+  }
+
+  .det {left: 3%;
+    position: absolute;
+    top: 19%;
+    color: white;
+  line-height: 27px;}
+
+h2{font-family: 'Huntington';
+  src: url(FontsFree-Net-Huntington.ttf); 
+color: white;
+font-size: 32pt;
+letter-spacing: -2px;
+text-align: left;}
+
+h1 {
+  font-family: 'Huntington';
+  font-size: 30px;
+}
+h3 {
+  font-family: 'Huntington';
+  font-size: 24px;
+}
+h4 {
+  font-family: 'Huntington';
+  font-size: 18px;
+  font-weight: bold;
+}
+p {
+font-size: 19pt;
+line-height: 25px;}
+/*.header-image {
+  background-image: url(header.jpg);
+  background-position: center;
+background-repeat: no-repeat;
+position: relative;
+background-size: cover;
+padding-top:35%;
+filter: brightness(70%);
+  }
+*/
+.header{width: 100%;
+ 
+    position: relative;
+    max-width: 100%;
+    height: auto;
+overflow: hidden;}
+
+#header{background-color: black;
+position: fixed;
+width: 100%;
+z-index: 20;}
+.menu{position: fixed;
+top: 0;
+letter-spacing: 0;
+left: 0;
+width: 100%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+transition: 0.6s ;
+padding: 40px 100px;
+z-index: 30;
+}
+.menu:hover, main:hover + .toTop { background-color: black; }
+
+.logo {
+  position: relative;
+  width: 150px;
+  transition: 0.6s ;
+}
+ 
+.menuUl{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+  .menuLi{
+    position: relative;
+    right: 50%;
+margin: 10px;
+    list-style: none;
+    transition: 0.6s ;
+    color: white;
+    font-weight: bold;
+    }
+  .button{background-color: #2baa53;
+    outline: 1px solid #2baa53;
+    outline-offset: 2px;
+    border: none;
+    cursor: pointer;
+    margin: 1%;
+    font-family: 'Huntington';
+
+    display: inline-block;
+   padding: 5%;
+  color: white;
+padding: 4%;}
+.main-text{text-align: center;
+  margin-top: 4%;
+margin-left: 20%;
+margin-right: 20%;}
+.text {font-size: 16px;
+}
+.footerH{color: white;font-size: 16px;}
+.footerUl{
+  color: white;
+  display: inline;
+  margin: 2%;
+  font-size: 20px;
+}
+.rights{font-size: 12px; margin-top: 0%; color: #ccc;}
+.login{color: white;
+position: absolute;
+right: 19%;
+top:0%;
+font-size: 12px;}
+.burger{display: none;
+z-index: 100;}
+.zoom {
+  display: inline-block; 
+  overflow: hidden; 
+  background: rgba(76, 175, 80);
+  opacity: 0.4;
+  position:relative;
+  z-index: 1;
+}
+
+ 
+ .zoom img {
+  transition: 1s; 
+  display: block; 
+  z-index: 1;
+  
+ }
+ .zoom img:hover {
+  transform: scale(1.2);
+ }
+ .imgName1
+{position: absolute;
+z-index: 10;
+top:10%;
+left: 10%;
+font-size: 32px;
+text-align: center;
+color: white;}
+.imgName
+{position: absolute;
+z-index: 10;
+top:10%;
+left: 5%;
+font-size: 32px;
+text-align: center;
+color: white;}
+.imgName2
+{position: absolute;
+z-index: 10;
+top:10%;
+left: 15%;
+font-size: 32px;
+text-align: center;
+color: white;}
+.imgName3
+{position: absolute;
+z-index: 10;
+top:10%;
+left: 40%;
+font-size: 32px;
+text-align: center;
+color: white;}
+.list-content{position: relative;
+  display: none;
+  right:20%;
+background-color: palevioletred;}
+.show {display:block}
+
+@media only screen and (max-width:1150px) {
+  .imgName1
+  {
+  font-size: 25px;}
+  .imgName
+  {
+  font-size: 25px;}
+  .imgName2
+  {
+  font-size: 25px;}
+  .imgName3
+  {
+  font-size: 25px;}
+  }
+@media only screen and (max-width:566px) {
+  .det{
+    line-height: 35px;
+  }
+  h2{  font-size: 25px;}
+  p{ font-size:18px}
+  }
+
+  @media only screen and (max-width:992px) {
+    .menuUl{display: none;
+    }
+  .login{display: none;}
+  .burger{display: block;
+  position: relative;
+  right: 20%;
+background: none;
+border: none;
+  }
+  }
