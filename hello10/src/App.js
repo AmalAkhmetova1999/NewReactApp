@@ -1,14 +1,26 @@
-import header from './header.jpg';
+import React, {useState} from "react"
 import './App.css';
 import {Container, Grid, Item } from "@mui/material";
 
 
 function App() {
-  const myFunction=()=> {
+
+  const [navBar, setNavBar] = useState(false);
+
+  const changeBackground = () => {
+    if (window.scrollY >= 15) {
+      setNavBar(true);
+    } else {
+      setNavBar(false);
+    }
+  };
+
+  window.addEventListener("scroll", changeBackground);
+  
+  const dropDown=()=> {
     document.getElementById("list").classList.toggle("show");
   }
   
-  // Close the dropdown if the user clicks outside of it
   /*window.onclick = function(event) {
     if (!event.target.matches('.burger')) {
       var listMenu = document.getElementsByClassName("list-content");
@@ -28,7 +40,7 @@ function App() {
     <Grid item xs={12}>
      <header className='header'>
 
-      <div className="menu" id='menu'>
+      <div className={navBar ? "menu active" : "menu"} id='menu'>
       <p className='login'> → Konsultlogin</p>
       <img className='logo' src={require('./logo.png')} />
       <ul className='menuUl'>
@@ -36,15 +48,17 @@ function App() {
         <li className='menuLi'>Registrera CV</li>
         <li className='menuLi'>För företag</li>
       </ul>
-    <button onclick={myFunction} className='burger'><img src={require('./burger.png')} /></button>
+    <button onClick={dropDown} className='burger'><img src={require('./burger.png')} /></button>
     <div id="list" className="list-content">
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
+    <li style={{listStyle:"none",padding:"2%",border:"solid 1px gray"}}><a style={{textDecoration:"none",color:"black",fontWeight: "bold"}} href="#ledigajobb">Lediga jobb</a></li>
+    <li style={{listStyle:"none",padding:"2%",border:"solid 1px gray"}}><a style={{textDecoration:"none",color:"black",fontWeight: "bold"}} href="#registreraCV">Registrera CV</a></li>
+    <li style={{listStyle:"none",padding:"2%",border:"solid 1px gray"}}><a style={{textDecoration:"none",color:"black",fontWeight: "bold"}} href="#förföretag">För företag</a></li>
+    <li style={{listStyle:"none",padding:"2%",border:"solid 1px gray"}}><a style={{textDecoration:"none",color:"black",fontWeight: "bold"}} href="#kontakt">Kontakt</a></li>
+    <li style={{listStyle:"none",padding:"2%",border:"solid 1px gray"}}><a style={{textDecoration:"none",color:"black",fontWeight: "bold"}} href="#konsultlogin">Konsultlogin</a></li>
   </div>
       
       </div>
-     <img src={require('./header.jpg')} />
+     <img className="pic" src={require('./header.jpg')} />
      </header>
      </Grid>
      </Grid>
@@ -87,9 +101,10 @@ Vår målsättning är att vara din personliga samarbetspartner och vi arbetar �
      </Grid>
       </Grid>
       <Grid container marginTop={"4%"}>
-      <Grid item xs={12}><h1 style={{textAlign:"center"}}>Här är ett urval av våra Kompetensområden</h1></Grid>
+      <Grid item xs={12}>
+        <h1 style={{textAlign:"center"}}>Här är ett urval av våra Kompetensområden</h1></Grid>
       </Grid>
-      <Grid container style={{backgroundColor:"#f2f2f2",textAlign:"center",marginLeft:"0%",marginRight:"0%",marginTop:"1%",padding:"3%",paddingBottom:"7%"}} spacing={5}>
+      <Grid container style={{backgroundColor:"#f2f2f2",textAlign:"center",paddingLeft:"5%",paddingRight:"5%"}} spacing={5}>
       <Grid item xs={12} md={3}>
         <div className='zoom'>
         <h4 className='imgName1'>IT och Telekom</h4>
@@ -189,26 +204,32 @@ Vår målsättning är att vara din personliga samarbetspartner och vi arbetar �
         <img style={{marginTop:"0.5%", width:"30px"}} src={require('./linkedin.png')} /> 
         </Grid>
         <Grid item xs={12} style={{textAlign:"center"}}>
-<ul>
+<Grid item xs={12} md={4}>
   <li  className='footerUl'>
   Lediga jobb
   </li>
   <li  className='footerUl'>
   Registrera CV
   </li>
+  </Grid>
+  <Grid item xs={12} md={4}>
   <li  className='footerUl'>
   För företag
   </li>
   <li  className='footerUl'>
   Integritetspolicy
   </li>
+  </Grid>
+  <Grid item xs={12} md={4}>
+
   <li  className='footerUl'>
   Cookies
   </li>
   <li  className='footerUl'>
   Kontakt
   </li>
-</ul>
+  </Grid>
+
         </Grid>
         <Grid item xs={12} style={{textAlign:"center"}}>
         <p className='footerH'>Landsvägen 57, 172 65 Sundbyberg, info@quest.se</p>
