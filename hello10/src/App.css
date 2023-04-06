@@ -13,7 +13,7 @@ margin: 0;}
 
   .det {left: 3%;
     position: absolute;
-    top: 19%;
+    top: 15%;
     color: white;
   line-height: 27px;}
 
@@ -113,11 +113,15 @@ margin: 10px;
     cursor: pointer;
     margin: 1%;
     font-family: 'Huntington';
-
+font-size: 20px;
     display: inline-block;
    padding: 5%;
   color: white;
 padding: 4%;}
+.right{position: fixed;
+right: -1%;
+font-size: 30px;
+padding: 3%;}
 .main-text{text-align: center;
   margin-top: 4%;
 margin-left: 20%;
@@ -226,6 +230,8 @@ background-color: white;}
 
   @media only screen and (max-width:992px) {
     .menuUl{display: none;
+    }
+    .right{display: none;
     }
   .login{display: none;}
   .burger{display: block;

@@ -68,6 +68,7 @@ function App() {
      <div className='header-button'>
      <button className='button'>LEDIGA JOBB</button>
      <button className='button'>REGISTRERA CV</button>
+     <button className='button right'>Spontan-<br/>ansökan</button>
      </div>
      </div>
      <div className='main-text'>
@@ -203,28 +204,34 @@ Vår målsättning är att vara din personliga samarbetspartner och vi arbetar �
         <Grid item xs={6} >
         <img style={{marginTop:"0.5%", width:"30px"}} src={require('./linkedin.png')} /> 
         </Grid>
-        <Grid item xs={12} style={{textAlign:"center"}}>
-<Grid item xs={12} md={4}>
+        <Grid container style={{textAlign:"center"}}>
+<Grid item xs={12} md={2}>
   <li  className='footerUl'>
   Lediga jobb
   </li>
+  </Grid>
+  <Grid item xs={12} md={2}>
   <li  className='footerUl'>
   Registrera CV
   </li>
   </Grid>
-  <Grid item xs={12} md={4}>
+  <Grid item xs={12} md={2}>
   <li  className='footerUl'>
   För företag
   </li>
+  </Grid>
+  <Grid item xs={12} md={2}>
   <li  className='footerUl'>
   Integritetspolicy
   </li>
   </Grid>
-  <Grid item xs={12} md={4}>
+  <Grid item xs={12} md={2}>
 
   <li  className='footerUl'>
   Cookies
   </li>
+  </Grid>
+  <Grid item xs={12} md={2}>
   <li  className='footerUl'>
   Kontakt
   </li>
